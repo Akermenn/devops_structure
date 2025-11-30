@@ -42,8 +42,9 @@ pipeline {
                 sh 'docker run -d --name project-backend --network app-network -p 5000:5000 -e ENV_TYPE=prod my-vkr-project_backend' // Тут имя образа должно совпадать с тем, как ты его назвал при билде
 
                 // Запускаем фронтенд
-                sh 'docker run -d --name project-frontend --network app-network -p 80:80 project-frontend'
+                sh 'docker run -d --name project-frontend --network app-network -p 80:80 my-vkr-project_frontend'
             }
         }
     }
+
 }
